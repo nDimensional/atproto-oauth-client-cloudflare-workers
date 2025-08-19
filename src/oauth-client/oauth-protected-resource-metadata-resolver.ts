@@ -78,8 +78,8 @@ export class OAuthProtectedResourceMetadataResolver extends CachedGetter<
     const url = new URL(`/.well-known/oauth-protected-resource`, origin);
     const request = new Request(url, {
       signal: options?.signal,
-      headers: { accept: "application/json" },
-      cache: options?.noCache ? "no-cache" : undefined,
+      headers: { accept: "application/json", "cache-control": "no-cache" },
+      // cache: options?.noCache ? "no-cache" : undefined,
       redirect: "manual", // response must be 200 OK
     });
 
