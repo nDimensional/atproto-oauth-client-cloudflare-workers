@@ -1,0 +1,43 @@
+{
+  "name": "atproto-oauth-client-cloudflare-workers",
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "scripts": {
+    "dev": "tsc --build tsconfig.json --watch",
+    "build": "tsc --build tsconfig.json",
+    "clean": "tsc --build tsconfig.json --clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nDimensional/atproto-oauth-client-cloudflare-workers.git"
+  },
+  "keywords": [
+    "atproto"
+  ],
+  "author": "Joel Gustafson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nDimensional/atproto-oauth-client-cloudflare-workers/issues"
+  },
+  "homepage": "https://github.com/nDimensional/atproto-oauth-client-cloudflare-workers#readme",
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "typescript": "^5.6.0"
+  },
+  "dependencies": {
+    "@atproto-labs/fetch": "^0.2.3",
+    "@atproto-labs/handle-resolver": "^0.3.0",
+    "@atproto/jwk-jose": "^0.1.10",
+    "@atproto/oauth-types": "^0.4.1",
+    "@types/node": "^24.3.0",
+    "multiformats": "^13.4.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "include": ["src", "types"],
+  "compilerOptions": {
+    "declaration": true,
+    "rootDir": "src",
+    "outDir": "lib",
+    "strict": true,
+    "skipLibCheck": true,
+    "target": "es2020",
+    "module": "node16",
+    "moduleResolution": "node16"
+  }
+}
