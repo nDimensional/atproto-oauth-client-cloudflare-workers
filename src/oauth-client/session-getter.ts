@@ -127,6 +127,8 @@ export class SessionGetter extends CachedGetter<AtprotoDid, Session> {
             authMethod: server.authMethod,
           };
         } catch (cause) {
+          console.error(cause);
+
           // If the refresh token is invalid, let's try to recover from
           // concurrency issues, or make sure the session is deleted by throwing
           // a TokenRefreshError.

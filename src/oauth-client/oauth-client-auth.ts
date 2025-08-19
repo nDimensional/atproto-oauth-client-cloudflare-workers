@@ -150,6 +150,7 @@ export function createClientCredentialsFactory(
         },
       });
     } catch (cause) {
+      console.error(cause);
       throw new AuthMethodUnsatisfiableError("Failed to load private key", {
         cause,
       });

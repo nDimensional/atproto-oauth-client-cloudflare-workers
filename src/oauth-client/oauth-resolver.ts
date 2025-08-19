@@ -109,6 +109,7 @@ export class OAuthResolver {
     try {
       return await this.identityResolver.resolve(input, options);
     } catch (cause) {
+      console.error(cause);
       throw OAuthResolverError.from(
         cause,
         `Failed to resolve identity: ${input}`,
@@ -126,6 +127,7 @@ export class OAuthResolver {
         options,
       );
     } catch (cause) {
+      console.error(cause);
       throw OAuthResolverError.from(
         cause,
         `Failed to resolve OAuth server metadata for issuer: ${issuer}`,
@@ -172,6 +174,7 @@ export class OAuthResolver {
 
       return asMetadata;
     } catch (cause) {
+      console.error(cause);
       throw OAuthResolverError.from(
         cause,
         `Failed to resolve OAuth server metadata for resource: ${pdsUrl}`,
@@ -212,6 +215,7 @@ function extractPdsUrl(document: DidDocument<AtprotoIdentityDidMethods>): URL {
   try {
     return new URL(service.serviceEndpoint);
   } catch (cause) {
+    console.error(cause);
     throw new OAuthResolverError(
       `Invalid PDS URL in DID document: ${service.serviceEndpoint}`,
       { cause },
