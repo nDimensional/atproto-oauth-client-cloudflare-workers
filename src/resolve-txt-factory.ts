@@ -4,8 +4,10 @@ import { ResolveTxt } from "#handle-resolver";
 
 import { isSystemError } from "./util.js";
 
-export const resolveTxtDefault: ResolveTxt = (hostname) =>
-  resolveTxt(hostname).then(groupChunks, handleError);
+export const resolveTxtDefault: ResolveTxt = (hostname) => {
+  console.log("RESOLVING TXT RECORD FOR", hostname);
+  return resolveTxt(hostname).then(groupChunks, handleError);
+};
 
 export function resolveTxtFactory(nameservers: string[]): ResolveTxt {
   // Optimization

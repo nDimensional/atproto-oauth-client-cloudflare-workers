@@ -8,7 +8,10 @@
   "main": "lib/index.js",
   "types": "./lib/index.d.ts",
   "exports": {
-    ".": "./lib/index.js"
+    ".": "./lib/index.js",
+    "./did-resolver": "./lib/did-resolver/index.js",
+    "./handle-resolver": "./lib/handle-resolver/index.js",
+    "./identity-resolver": "./lib/identity-resolver/index.js"
   },
   "imports": {
     "#did-resolver": "./lib/did-resolver/index.js",

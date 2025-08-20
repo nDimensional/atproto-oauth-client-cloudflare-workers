@@ -48,7 +48,7 @@ export class XrpcHandleResolver implements HandleResolver {
     const response = await this.fetch.call(null, url, {
       cache: options?.noCache ? "no-cache" : undefined,
       signal: options?.signal,
-      redirect: "error",
+      redirect: "follow",
     });
     const payload = await response.json();
 

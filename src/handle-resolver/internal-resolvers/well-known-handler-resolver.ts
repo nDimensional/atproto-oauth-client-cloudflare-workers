@@ -32,9 +32,10 @@ export class WellKnownHandleResolver implements HandleResolver {
 
     try {
       const response = await this.fetch.call(null, url, {
-        cache: options?.noCache ? "no-cache" : undefined,
+        // cache: options?.noCache ? "no-cache" : undefined,
         signal: options?.signal,
-        redirect: "error",
+        redirect: "follow",
+        headers: { "cache-control": "no-cache" },
       });
       const text = await response.text();
       const firstLine = text.split("\n")[0]!.trim();
