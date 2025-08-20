@@ -1,8 +1,5 @@
 // import { Fetch, safeFetchWrap } from "@atproto-labs/fetch-node";
-import {
-  AtprotoHandleResolver,
-  HandleResolver,
-} from "@atproto-labs/handle-resolver";
+import { AtprotoHandleResolver, HandleResolver } from "#handle-resolver";
 import { resolveTxtDefault, resolveTxtFactory } from "./resolve-txt-factory.js";
 
 export type AtprotoHandleResolverNodeOptions = {

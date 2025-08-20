@@ -12,7 +12,7 @@ import {
   IdentityInfo,
   IdentityResolver,
   ResolveIdentityOptions,
-} from "../identity-resolver/index.js";
+} from "#identity-resolver";
 import {
   GetCachedOptions,
   OAuthAuthorizationServerMetadataResolver,

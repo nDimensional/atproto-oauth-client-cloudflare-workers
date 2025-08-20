@@ -12,10 +12,10 @@ import {
   DidCache,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   type DidResolverCommonOptions,
-} from "../did-resolver/index.js";
+} from "#did-resolver";
 import { Fetch } from "@atproto-labs/fetch";
-import { HandleCache, HandleResolver } from "@atproto-labs/handle-resolver";
-import { HANDLE_INVALID } from "../identity-resolver/index.js";
+import { HandleCache, HandleResolver } from "#handle-resolver";
+import { HANDLE_INVALID } from "#identity-resolver";
 import { SimpleStoreMemory } from "@atproto-labs/simple-store-memory";
 import { FALLBACK_ALG } from "./constants.js";
 import { AuthMethodUnsatisfiableError } from "./errors/auth-method-unsatisfiable-error.js";

@@ -4,11 +4,8 @@ import {
   DidDocument,
   isAtprotoDid,
 } from "@atproto/did";
-import { DidResolver, ResolveDidOptions } from "../did-resolver/index.js";
-import {
-  HandleResolver,
-  ResolveHandleOptions,
-} from "@atproto-labs/handle-resolver";
+import { DidResolver, ResolveDidOptions } from "#did-resolver";
+import { HandleResolver, ResolveHandleOptions } from "#handle-resolver";
 import { HANDLE_INVALID } from "./constants.js";
 import { IdentityResolverError } from "./identity-resolver-error.js";
 import {

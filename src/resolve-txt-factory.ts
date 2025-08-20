@@ -1,6 +1,6 @@
 import { Resolver, lookup, resolveTxt } from "node:dns/promises";
 import { isIP } from "node:net";
-import { ResolveTxt } from "@atproto-labs/handle-resolver";
+import { ResolveTxt } from "#handle-resolver";
 
 import { isSystemError } from "./util.js";
 

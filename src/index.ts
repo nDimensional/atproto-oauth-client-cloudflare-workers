@@ -7,7 +7,7 @@ import {
   OAuthClientOptions,
   RuntimeImplementation,
   RuntimeLock,
-} from "./oauth-client/index.js";
+} from "#oauth-client";
 import { OAuthResponseMode } from "@atproto/oauth-types";
 import {
   AtprotoHandleResolverNode,

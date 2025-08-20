@@ -10,6 +10,12 @@
   "exports": {
     ".": "./lib/index.js"
   },
+  "imports": {
+    "#did-resolver": "./lib/did-resolver/index.js",
+    "#handle-resolver": "./lib/handle-resolver/index.js",
+    "#identity-resolver": "./lib/identity-resolver/index.js",
+    "#oauth-client": "./lib/oauth-client/index.js"
+  },
   "scripts": {
     "dev": "tsc --build tsconfig.json --watch",
     "build": "tsc --build tsconfig.json",
@@ -34,10 +40,15 @@
   },
   "dependencies": {
     "@atproto-labs/fetch": "^0.2.3",
-    "@atproto-labs/handle-resolver": "^0.3.0",
+    "@atproto-labs/pipe": "^0.1.1",
+    "@atproto-labs/simple-store": "^0.2.0",
+    "@atproto-labs/simple-store-memory": "^0.1.3",
+    "@atproto/did": "^0.1.5",
     "@atproto/jwk-jose": "^0.1.10",
     "@atproto/oauth-types": "^0.4.1",
+    "@atproto/xrpc": "^0.7.1",
     "@types/node": "^24.3.0",
-    "multiformats": "^13.4.0"
+    "multiformats": "^13.4.0",
+    "zod": "^3.25.76"
   }
 }
