@@ -16,4 +16,4 @@ The only changes applied throughout are:
 1. replacing `request.cache: "no-cache"` with `request.headers["cache-control"]: "no-cache"`
 2. replacing `request.redirect: "error"` with `request.redirect: "follow"`
 
-DNS handle resolution appears to work when using the [`nodejs_compat` compatibility flag](https://developers.cloudflare.com/workers/runtime-apis/nodejs/).
+DNS handle resolution requires the [`nodejs_compat` compatibility flag](https://developers.cloudflare.com/workers/runtime-apis/nodejs/).

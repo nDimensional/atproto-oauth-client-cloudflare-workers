@@ -37,8 +37,8 @@ export function toDpopKeyStore<
   };
 }
 
-export type NodeSavedState = ToDpopJwkValue<InternalStateData>;
-export type NodeSavedStateStore = SimpleStore<string, NodeSavedState>;
+export type WorkersSavedState = ToDpopJwkValue<InternalStateData>;
+export type WorkersSavedStateStore = SimpleStore<string, WorkersSavedState>;
 
-export type NodeSavedSession = ToDpopJwkValue<Session>;
-export type NodeSavedSessionStore = SimpleStore<string, NodeSavedSession>;
+export type WorkersSavedSession = ToDpopJwkValue<Session>;
+export type WorkersSavedSessionStore = SimpleStore<string, WorkersSavedSession>;

@@ -10,37 +10,34 @@ import {
 } from "#oauth-client";
 import { OAuthResponseMode } from "@atproto/oauth-types";
 import {
-  AtprotoHandleResolverNode,
-  AtprotoHandleResolverNodeOptions,
+  AtprotoHandleResolverWorkers,
+  AtprotoHandleResolverWorkersOptions,
 } from "./handle-resolver.js";
 import {
-  NodeSavedSessionStore,
-  NodeSavedStateStore,
+  WorkersSavedSessionStore,
+  WorkersSavedStateStore,
   toDpopKeyStore,
 } from "./dpop-store.js";
 import { Override } from "./util.js";
 
-export type * from "./dpop-store.js";
-export type { OAuthClientOptions, OAuthResponseMode, RuntimeLock };
-
-export type NodeOAuthClientOptions = Override<
+export type WorkersOAuthClientOptions = Override<
   OAuthClientOptions,
   {
     responseMode?: Exclude<OAuthResponseMode, "fragment">;
 
-    stateStore: NodeSavedStateStore;
-    sessionStore: NodeSavedSessionStore;
+    stateStore: WorkersSavedStateStore;
+    sessionStore: WorkersSavedSessionStore;
 
     /**
-     * Used to build a {@link NodeOAuthClientOptions.handleResolver} if none is
+     * Used to build a {@link WorkersOAuthClientOptions.handleResolver} if none is
      * provided.
      */
-    fallbackNameservers?: AtprotoHandleResolverNodeOptions["fallbackNameservers"];
+    fallbackNameservers?: AtprotoHandleResolverWorkersOptions["fallbackNameservers"];
 
     handleResolver?: HandleResolver | string | URL;
 
     /**
-     * Used to build a {@link NodeOAuthClientOptions.runtimeImplementation} if
+     * Used to build a {@link WorkersOAuthClientOptions.runtimeImplementation} if
      * none is provided. Pass in `requestLocalLock` from `@atproto/oauth-client`
      * to mute warning.
      */
@@ -50,11 +47,11 @@ export type NodeOAuthClientOptions = Override<
   }
 >;
 
-export type NodeOAuthClientFromMetadataOptions =
+export type WorkersOAuthClientFromMetadataOptions =
   OAuthClientFetchMetadataOptions &
-    Omit<NodeOAuthClientOptions, "clientMetadata">;
+    Omit<WorkersOAuthClientOptions, "clientMetadata">;
 
-export class NodeOAuthClient extends OAuthClient {
+export class WorkersOAuthClient extends OAuthClient {
   constructor({
     requestLock = undefined,
     fallbackNameservers = undefined,
@@ -65,7 +62,7 @@ export class NodeOAuthClient extends OAuthClient {
     stateStore,
     sessionStore,
 
-    handleResolver = new AtprotoHandleResolverNode({
+    handleResolver = new AtprotoHandleResolverWorkers({
       fetch,
       fallbackNameservers,
     }),
@@ -79,7 +76,7 @@ export class NodeOAuthClient extends OAuthClient {
     },
 
     ...options
-  }: NodeOAuthClientOptions) {
+  }: WorkersOAuthClientOptions) {
     if (!runtimeImplementation.requestLock) {
       // Ok if only one instance of the client is running at a time.
       console.warn(

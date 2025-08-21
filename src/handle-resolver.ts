@@ -1,8 +1,7 @@
-// import { Fetch, safeFetchWrap } from "@atproto-labs/fetch-node";
 import { AtprotoHandleResolver, HandleResolver } from "#handle-resolver";
 import { resolveTxtDefault, resolveTxtFactory } from "./resolve-txt-factory.js";
 
-export type AtprotoHandleResolverNodeOptions = {
+export type AtprotoHandleResolverWorkersOptions = {
   /**
    * List of backup nameservers to use in case the primary ones fail. Will
    * default to no fallback nameservers.
@@ -20,14 +19,14 @@ export type AtprotoHandleResolverNodeOptions = {
   fetch?: (typeof globalThis)["fetch"];
 };
 
-export class AtprotoHandleResolverNode
+export class AtprotoHandleResolverWorkers
   extends AtprotoHandleResolver
   implements HandleResolver
 {
   constructor({
     fetch = globalThis.fetch,
     fallbackNameservers,
-  }: AtprotoHandleResolverNodeOptions = {}) {
+  }: AtprotoHandleResolverWorkersOptions = {}) {
     super({
       fetch: fetch,
       // fetch: safeFetchWrap({
