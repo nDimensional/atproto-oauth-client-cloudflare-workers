@@ -11,7 +11,8 @@
     ".": "./lib/index.js",
     "./did-resolver": "./lib/did-resolver/index.js",
     "./handle-resolver": "./lib/handle-resolver/index.js",
-    "./identity-resolver": "./lib/identity-resolver/index.js"
+    "./identity-resolver": "./lib/identity-resolver/index.js",
+    "./oauth-client": "./lib/oauth-client/index.js"
   },
   "imports": {
     "#did-resolver": "./lib/did-resolver/index.js",
@@ -49,7 +50,7 @@
     "@atproto/did": "^0.1.5",
     "@atproto/jwk-jose": "^0.1.10",
     "@atproto/oauth-types": "^0.4.1",
-    "@atproto/xrpc": "^0.7.1",
+    "@atproto/xrpc": "^0.7.2",
     "@types/node": "^24.3.0",
     "multiformats": "^13.4.0",
     "zod": "^3.25.76"
