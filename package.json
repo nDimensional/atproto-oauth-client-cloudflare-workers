@@ -39,6 +39,8 @@
   },
   "homepage": "https://github.com/nDimensional/atproto-oauth-client-cloudflare-workers#readme",
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250821.0",
+    "@types/node": "^24.3.0",
     "prettier": "^3.6.2",
     "typescript": "^5.6.0"
   },
@@ -51,7 +53,6 @@
     "@atproto/jwk-jose": "^0.1.10",
     "@atproto/oauth-types": "^0.4.1",
     "@atproto/xrpc": "^0.7.2",
-    "@types/node": "^24.3.0",
     "multiformats": "^13.4.0",
     "zod": "^3.25.76"
   }
