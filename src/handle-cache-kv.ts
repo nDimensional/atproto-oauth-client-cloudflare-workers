@@ -1,6 +1,6 @@
 import type { HandleCache, ResolvedHandle } from "#handle-resolver";
 
-import { KVNamespace } from "@cloudflare/workers-types";
+import type { KVNamespace } from "./util.js";
 
 const DEFAULT_TTL = 60 * 60 * 1000; // 1 hour
 const DEFAULT_MAX_SIZE = 1024;

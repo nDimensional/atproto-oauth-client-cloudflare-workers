@@ -1,9 +1,9 @@
-import type { KVNamespace } from "@cloudflare/workers-types";
-
 import type {
   WorkersSavedState,
   WorkersSavedStateStore,
 } from "./dpop-store.js";
+
+import type { KVNamespace } from "./util.js";
 
 export class StateStoreKV implements WorkersSavedStateStore {
   namespace: KVNamespace;

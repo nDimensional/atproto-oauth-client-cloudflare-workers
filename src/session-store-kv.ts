@@ -1,9 +1,8 @@
-import type { KVNamespace } from "@cloudflare/workers-types";
-
 import type {
   WorkersSavedSession,
   WorkersSavedSessionStore,
 } from "./dpop-store.js";
+import type { KVNamespace } from "./util.js";
 
 export class SessionStoreKV implements WorkersSavedSessionStore {
   namespace: KVNamespace;
